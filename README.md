@@ -6,9 +6,13 @@ rds : https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resource
 
 목표 : 3 tier app 인프라 구현 자동화  
 
-1. 아키텍처 설계  
+# 기본 아키텍처  
 
 ![image](https://user-images.githubusercontent.com/73922068/130666057-0206f2a6-723b-4054-81b8-2bde539f44e5.png)
+
+# RDS#1 장애 발생시  
+
+![image](https://user-images.githubusercontent.com/73922068/130666910-13c3d7e9-39d4-427a-a960-b8c87c7a3051.png)
 
 
 3. terraform provisioning - route53 dns 이름을 가비아 서비스 사용해서 구현해보기    
