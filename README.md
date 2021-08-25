@@ -20,3 +20,4 @@ rds : https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resource
 5. 보안작업  
 참고 : https://www.notion.so/Terraform-3-tier-with-Ansible-acab501ea1d543f096b42a92d61b9e46  
 
+해야될 것 : elb 세팅 , 가비아에서 발급한 도메인네임 연계, ansible 자동배포, ssh 연결 로컬ip로 변수화, github 정리 
