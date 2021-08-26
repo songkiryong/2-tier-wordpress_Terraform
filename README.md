@@ -15,9 +15,9 @@ rds : https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resource
 ![image](https://user-images.githubusercontent.com/73922068/130666910-13c3d7e9-39d4-427a-a960-b8c87c7a3051.png)
 
 
-3. terraform provisioning - route53 dns 이름을 가비아 서비스 사용해서 구현해보기    
-4. terraform + ansible 연동   
-5. 보안작업  
-참고 : https://www.notion.so/Terraform-3-tier-with-Ansible-acab501ea1d543f096b42a92d61b9e46  
-
-해야될 것 : elb 세팅 , 가비아에서 발급한 도메인네임 연계, ansible 자동배포, ssh 연결 로컬ip로 변수화, github 정리 
+작동순서  
+1. terraform init  
+2. terraform apply  
+3. backend.tf 를 terraform 디렉토리에 넣고 terraform init -reconfigure  
+4. terraform apply  
+5. ansible-playbook deploy.yaml -b --private-key "~/.ssh/id_rsa"  
