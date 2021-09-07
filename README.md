@@ -1,11 +1,5 @@
-# 기본 아키텍처  
-
-![image](https://user-images.githubusercontent.com/73922068/130666057-0206f2a6-723b-4054-81b8-2bde539f44e5.png)
-
-# RDS#1 장애 발생시  
-
-![image](https://user-images.githubusercontent.com/73922068/130666910-13c3d7e9-39d4-427a-a960-b8c87c7a3051.png)
-
+# 목표
+Terraform 과 Ansible 을 이용하여 2-Tier Wordpress (apache2 - wordpress - mysql) 구축을 자동화 합니다.  
 
 # 작동순서  
 ## Terraform  
