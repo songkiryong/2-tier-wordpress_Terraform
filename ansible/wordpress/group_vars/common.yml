@@ -1,0 +1,13 @@
+#mysql_setting
+login_host: "192.168.%.%"
+mysql_user: "wordpress"
+mysql_db: "wordpress"
+mysql_host: "wordpress.cuzb135a4vcu.ap-northeast-2.rds.amazonaws.com"
+mysql_password: "wordpress"
+address: "0.0.0.0"
+#apache2 setting
+listen_port: "80"
+
+#wordpress download link
+wordpress_url: https://ko.wordpress.org/latest-ko_KR.tar.gz 
+

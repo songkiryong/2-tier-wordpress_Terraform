@@ -1,0 +1,39 @@
+---
+# tasks file for wordpress
+# install wordpress
+- name: install wordpress
+  get_url:
+    url: "{{ wordpress_url }}"
+    dest: /home/wordpress.tar.gz
+  async: 200
+  poll: 0
+  register: install_wordpress
+
+# install apache2,php
+- name: install apahce2, php Ubuntu ver.
+  include_tasks: ubuntu.yaml
+  when:
+    - ansible_facts['distribution']=="Ubuntu"
+- name: install apache2, php CentOS ver.
+  include_tasks: centos.yaml
+  when:
+    - ansible_facts['distribution']=="CentOS"
+
+- name: after install wordpress
+  async_status:
+    jid: "{{ install_wordpress.ansible_job_id }}"
+  register: job_result
+  until: job_result.finished
+  retries: 100
+  delay: 10
+- name: unarchive wordpress
+  unarchive:
+    src: /home/wordpress.tar.gz
+    dest: /var/www/html
+    remote_src: yes
+- name: wp-config setting
+  template:
+    src: wp-config.php.j2
+    dest: /var/www/html/wordpress/wp-config.php
+  
+   

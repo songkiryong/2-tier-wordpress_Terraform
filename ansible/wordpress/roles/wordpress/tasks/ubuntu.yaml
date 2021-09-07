@@ -1,0 +1,18 @@
+- name: install apache2&php
+  apt:
+    name: apache2,php,php-mbstring,php-gd,php-mysql
+    state: present
+    update_cache: yes
+- name: ports.conf setting
+  template:
+    src: ports.conf.j2
+    dest: /etc/apache2/ports.conf
+    notify:
+      - Restart apache2
+- name: service apache2
+  service:
+    name: apache2
+    enabled: yes
+    state: started
+
+  

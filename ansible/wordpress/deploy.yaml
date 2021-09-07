@@ -1,0 +1,23 @@
+- name: web
+  vars_files:
+    - group_vars/common.yml
+  hosts: aws_ubuntu_1, aws_ubuntu_2
+  
+  roles:
+    - wordpress
+
+      #- name: db
+      #vars_files:
+      # - group_vars/common.yml
+      # hosts: db_centos
+      #roles:
+      #- mysql
+ 
+
+
+       
+       
+      
+
+      
+
