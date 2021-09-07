@@ -1,0 +1,64 @@
+
+- hosts: web_centos
+  tasks:
+  - name: stop service of http
+    service:
+      name: httpd
+      state: stopped
+      enabled: 1
+  - name: disable firewalld of http
+    firewalld:
+      service: http
+      permanent: yes
+      state: disabled
+      immediate: yes
+  - name: delete wordpress
+    file:
+      path: /var/www/html/wordpress
+      state: absent
+  - name: delete archive of wordpress
+    file:
+      path: /tmp/latest-ko_KR.tar.gz
+      state: absent
+  - name: delete package of php
+    yum:
+      name: php*
+      autoremove: 1
+      state: absent
+  - name: delete package of wget
+    yum:
+      name: wget
+      autoremove: 1
+      state: absent
+  - name: delete package of libsemanage-python
+    yum:
+      name: libsemanage-python
+      autoremove: 1
+      state: absent
+  - name: delete epel-release
+    yum:
+      name: epel-release
+      autoremove: 1
+      state: absent
+
+- hosts: db_centos
+  tasks:
+  - name: turnoff service of mysql
+    firewalld:
+      service: mysql
+      permanent: yes
+      state: disabled
+      immediate: yes
+  - name: delete package of MariaDB
+    yum:
+      autoremove: 1
+      name: MariaDB
+      state: absent
+  - name: delete package of MariaDB repository
+    yum_repository:
+      name: MariaDB
+      state: absent
+  - name: delete directory of mysql
+    file:
+      path: /var/lib/mysql
+      state: absent
