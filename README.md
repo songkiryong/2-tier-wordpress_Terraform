@@ -15,6 +15,11 @@ Terraform 과 Ansible 을 이용하여 2-Tier Wordpress (apache2 - wordpress - m
 - dynamodb : .tfstate 파일을 동시에 작업할 수 없도록 lock을 거는 table 생성  
 
 
+
+# 필요한 것들  
+- private key : ansible playbook을 실행할 때 EC2와의 ssh 연결을 위한 개인키
+- 
+
 # 작동순서  
 
 1. clone  
@@ -32,7 +37,12 @@ terraform apply
 ``` 
 ansible-playbook deploy.yaml -b --private-key "~/.ssh/id_rsa" 
 ```
-
-# 필요한 것들  
-- private key : ansible playbook을 실행할 때 EC2와의 ssh 연결을 위한 개인키
-- 
+# 삭제  
+1. Terraform  
+```
+terraform destroy
+```
+2. Ansible
+```
+ansible-playbook remove.yaml -b --private-key "~/.ssh/id_rsa"
+```
