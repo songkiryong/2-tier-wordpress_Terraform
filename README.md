@@ -18,12 +18,12 @@ Terraform 과 Ansible 을 이용하여 2-Tier Wordpress (apache2 - wordpress - m
 
 # 준비사항  
 1. Terraform  
-- terraform.tfvars  
-  - public_key : ec2의 public key  
-  - local_ip : ansible을 실행할 컴퓨터의 ip  
+  - terraform.tfvars  
+    - public_key : ec2의 public key  
+    - local_ip : ansible을 실행할 컴퓨터의 ip  
 2. Ansible    
-- private key : ansible playbook을 실행할 때 EC2와의 ssh 연결을 위한 개인키  
-- static.ini : 서버의 ip   
+  - private key : ansible playbook을 실행할 때 EC2와의 ssh 연결을 위한 개인키  
+  - static.ini : 서버의 ip   
 
 # 작동순서  
 
