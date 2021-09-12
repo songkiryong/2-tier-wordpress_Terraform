@@ -21,14 +21,14 @@ Terraform 과 Ansible 을 이용하여 2-Tier Wordpress (apache2 - wordpress - m
 ``` 
 https://github.com/songkiryong/2-tier-wordpress_Terraform.git 
 ```
+
 2. Terraform  
 ``` 
 terraform init  
 terraform apply 
 ```
-3. backend.tf 를 terraform 디렉토리에 넣고 terraform init -reconfigure  
 
-4. Ansible    
+3. Ansible    
 ``` 
 ansible-playbook deploy.yaml -b --private-key "~/.ssh/id_rsa" 
 ```
