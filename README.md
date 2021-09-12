@@ -1,6 +1,10 @@
 # 목표
 Terraform 과 Ansible 을 이용하여 2-Tier Wordpress (apache2 - wordpress - mysql) 구축을 자동화 합니다.  
 
+# 아키텍처  
+1. 기본 아키텍처  
+![image](https://user-images.githubusercontent.com/73922068/132995729-a51ae8b7-0d0c-4404-aa93-bb240b1f3a2e.png)
+
 # 작동순서  
 ## Terraform  
 1. terraform init  
