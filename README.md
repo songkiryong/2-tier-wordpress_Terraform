@@ -16,10 +16,16 @@ Terraform 과 Ansible 을 이용하여 2-Tier Wordpress (apache2 - wordpress - m
 
 
 # 작동순서  
-- Terraform  
-1. terraform init  
-2. terraform apply  
-3. backend.tf 를 terraform 디렉토리에 넣고 terraform init -reconfigure  
+- Terraform 
+1. clone
+```  
+3. terraform init  
 4. terraform apply  
+5. backend.tf 를 terraform 디렉토리에 넣고 terraform init -reconfigure  
+6. terraform apply  
 - Ansible    
-5. ansible-playbook deploy.yaml -b --private-key "~/.ssh/id_rsa"  
+7. ansible-playbook deploy.yaml -b --private-key "~/.ssh/id_rsa"  
+
+# 필요한 것들  
+- private key : ansible playbook을 실행할 때 EC2와의 ssh 연결을 위한 개인키
+- 
